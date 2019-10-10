@@ -1,0 +1,89 @@
+module main(SW, KEY, LEDR);
+    input [9:0] SW;
+    input [3:0] KEY;
+    output [9:0] LEDR;
+
+    circuit z(.rotateright(~KEY[2]), .parallelloadn(~KEY[1]), .asright(~KEY[3]), .clk(~KEY[0]), .reset(SW[9]), .Data_in(SW[7:0]), .Data_out(LEDR[7:0]));
+endmodule
+
+module circuit(rotateright, parallelloadn, asright, clk, reset, Data_in, Data_out);
+    input reset;
+    input clk;
+    input [7:0] Data_in;
+    input rotateright;
+    input parallelloadn;
+    input asright;
+    output [7:0] Data_out;
+
+    subcircuit q0 (.right(Data_out[7]), .left(Data_out[1]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[0]), .Q(Data_out[0]));
+    subcircuit q1 (.right(Data_out[0]), .left(Data_out[2]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[1]), .Q(Data_out[1]));
+    subcircuit q2 (.right(Data_out[1]), .left(Data_out[3]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[2]), .Q(Data_out[2]));
+    subcircuit q3 (.right(Data_out[2]), .left(Data_out[4]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[3]), .Q(Data_out[3]));
+    subcircuit q4 (.right(Data_out[3]), .left(Data_out[5]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[4]), .Q(Data_out[4]));
+    subcircuit q5 (.right(Data_out[4]), .left(Data_out[6]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[5]), .Q(Data_out[5]));
+    subcircuit q6 (.right(Data_out[5]), .left(Data_out[7]), .rotateright(rotateright), .parallelloadn(parallelloadn), .clk(clk), .reset(reset), .Data_in(Data_in[6]), .Q(Data_out[6]));
+    subcircuit_left q7 (.right(Data_out[6]), .left(Data_out[0]), .rotateright(rotateright), .parallelloadn(parallelloadn), .asright(asright), .clk(clk), .reset(reset), .Data_in(Data_in[7]), .Q(Data_out[7]));
+
+endmodule
+
+module subcircuit(right, left, rotateright, parallelloadn, Data_in, clk, reset, Q);
+    input reset;
+    input clk;
+    input Data_in;
+    input right;
+    input left;
+    input rotateright;
+    input parallelloadn;
+    output Q;
+    wire c1, c2;
+	 
+    mux2to1 u1 (.a(right), .b(left), .s(rotateright), .f(c1));
+    mux2to1 u2 (.a(Data_in), .b(c1), .s(parallelloadn), .f(c2));
+    flipflop u3 (.reset(reset), .clk(clk), .D(c2), .Q(Q));
+
+endmodule
+
+module subcircuit_left(right, left, rotateright, parallelloadn, asright, Data_in, clk, reset, Q);
+    input reset;
+    input clk;
+    input Data_in;
+    input right;
+    input left;
+    input rotateright;
+    input parallelloadn;
+    input asright;
+    output Q;
+    wire c1, c2, c3;
+
+    mux2to1 u0 (.a(left), .b(Q), .s(asright), .f(c1));
+    mux2to1 u1 (.a(right), .b(c1), .s(rotateright), .f(c2));
+    mux2to1 u2 (.a(Data_in), .b(c2), .s(parallelloadn), .f(c3));
+    flipflop u3 (.reset(reset), .clk(clk), .D(c3), .Q(Q));
+
+endmodule
+
+
+module mux2to1 (a, b, s, f);
+    input a;
+    input b;
+    input s;
+    output f;
+
+    assign f = (~s)&a || s&b;
+endmodule
+
+module flipflop (reset, clk, D, Q);
+    input reset;
+    input clk;
+    input D;
+    output reg Q;
+
+    always@(posedge clk)//   triggered every time clock rises
+        begin
+            if (reset == 1'b1)//   when Reset  b is 0 (note this is tested on every rising clock edge)
+                Q <= 0; // q is set to 0. Note that the assignment uses <= 
+            else //   when Reset  b is not 0 
+                Q <= D; //   value of d passes through to output q
+    end
+
+endmodule

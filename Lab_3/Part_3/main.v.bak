@@ -1,0 +1,62 @@
+`timescale 1ns / 1ns
+
+module main(input [7:0] SW, [2:0] KEY,
+			output reg [7:0] ALUout, [7:0] adder_storage,  [6:0]HEX0, [6:0]HEX1, [6:0]HEX2, [6:0]HEX3, [6:0]HEX4, [6:0]HEX5);
+
+	HEX_display hex0 (.data([3:0]SW), .HEX_display(HEX0));
+    HEX_display hex2 (.data([7:4]SW), .HEX_display(HEX2));
+    HEX_display hex1 (.data(3'b000), .HEX_display(HEX1));
+    HEX_display hex3 (.data(3'b000), .HEX_display(HEX3));
+    HEX_display hex4 (.data([3:0]ALUout), .HEX_display(HEX4));
+    HEX_display hex5 (.data([7:4]ALUout), .HEX_display(HEX5));
+    adder(.a(SW[7:4]), .b(SW[3:0], .sum(adder_storage)));
+
+    always @(*)
+    begin
+        case([2:0]KEY)
+            3'b000: ALUout = adder_storage;
+            3'b001: ALUout = [7:4]SW + [3:0]SW;
+            3'b010: ALUout = (~([7:4]SW^[3:0]SW))|((~([7:4]SW&[3:0]SW)<<4));
+            3'b011: ALUout = [7:4]SW || [3:0]SW ? 8'b11000000: 8'b00000000;
+            3'b100: ((SW[4] + SW[5] +SW[6] + SW[7]) >= 2) && ((SW[0] + SW[1] + SW[2] + SW[3]) >= 3) ? 8'b00111111: 8'b00000000; // case 4 
+            3'b101: ALUout = {[3:0]SW, [7:4]SW};
+            3'b110: ALUout = {[7:4]SW ^ [3:0]SW, [7:4]SW ^~ [3:0]SW};
+            default: ALUout = 8'b00000000;
+        endcase
+    end
+
+// The A and B inputs connect to switches SW 7−4 and SW 3−0 respectively.
+// Use KEY 2−0 for the function inputs. Display ALU out[7:0] in binary on LEDR7−0;  
+// have HEX0 and HEX2 display the values of B and A respectively and set HEX1 and HEX3 to 0. 
+// HEX4 and HEX5 should display ALUout [3:0] and ALUout [7:4] respectively.
+endmodule
+
+module adder(input [3:0] a, [3:0] b, output [7:0] ALUout);
+    wire c1, c2, c3;
+    
+    //             bit0, bit1, cin, sum, cout
+    full_adder u1 (.bit0(a[0]), .bit1(b[0]), .cin(0), .sum(ALUout[0]), .cout(c1));
+    full_adder u2 (.bit0(a[1]), .bit1(b[1]), .cin(c1), .sum(ALUout[1]), .cout(c2));
+    full_adder u3 (.bit0(a[2]), .bit1(b[2]), .cin(c2), .sum(ALUout[2]), .cout(c3));
+    full_adder u4 (.bit0(a[3]), .bit1(b[3]), .cin(c3), .sum(ALUout[3]), .cout(ALUout[4]));
+    assign ALUout[5] = 0;
+    assign ALUout[6] = 0;
+    assign ALUout[7] = 0;
+endmodule
+
+module full_adder(input bit0, bit1, cin,
+                  output sum, cout);
+    assign sum = bit0^bit1^cin;
+    assign cout = (bit0&bit1)|(bit0&cin)|(bit1&cin);
+endmodule
+
+module seg7_HEX0 (input [3:0] data, output [6:0] HEX_display);
+
+    assign HEX_display[0] = (~ SW[0] & ~ SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (SW[0] & ~ SW[1] & SW[2] & SW[3]) | (SW[0] & SW[1] & ~ SW[2] & SW[3]);
+    assign HEX_display[1] = (SW[0] & SW[1] & SW[2] & SW[3]) | (SW[0] & SW[1] & SW[2] & ~ SW[3]) | (SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (SW[0] & ~ SW[1] & SW[2] & SW[3]) | (~ SW[0] & SW[1] & SW[2] & ~ SW[3]) | (~ SW[0] & SW[1] & ~ SW[2] & SW[3]);
+    assign HEX_display[2] = (SW[0] & SW[1] & SW[2] & SW[3]) | (SW[0] & SW[1] & SW[2] & ~ SW[3]) | (SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (~ SW[0] & ~ SW[1] & SW[2] & ~ SW[3]);
+    assign HEX_display[3] = (SW[0] & SW[1] & SW[2] & SW[3]) | (SW[0] & ~ SW[1] & SW[2] & ~ SW[3]) | (SW[0] & ~ SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & SW[1] & SW[2] & SW[3]) | (~ SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (~ SW[0] & ~ SW[1] & ~ SW[2] & SW[3]);
+    assign HEX_display[4] = (SW[0] & ~ SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & SW[1] & SW[2] & SW[3]) | (~ SW[0] & SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (~ SW[0] & ~ SW[1] & SW[2] & SW[3]) | (~ SW[0] & ~ SW[1] & ~ SW[2] & SW[3]);
+    assign HEX_display[5] = (SW[0] & SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & SW[1] & SW[2] & SW[3]) | (~ SW[0] & ~ SW[1] & SW[2] & SW[3]) | (~ SW[0] & ~ SW[1] & SW[2] & ~ SW[3]) | (~ SW[0] & ~ SW[1] & ~ SW[2] & SW[3]);
+    assign HEX_display[6] = (SW[0] & SW[1] & ~ SW[2] & ~ SW[3]) | (~ SW[0] & SW[1] & SW[2] & SW[3]) | (~ SW[0] & ~ SW[1] & ~ SW[2] & SW[3]) | (~ SW[0] & ~ SW[1] & ~ SW[2] & ~ SW[3]);
+endmodule

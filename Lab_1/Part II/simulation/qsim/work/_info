@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital Systems/Labs/Lab 1/Project/Part II/simulation/qsim
+vPart_II
+!s110 1568579303
+!i10b 1
+!s100 @OP`6ThF5zTc;^o3mJ7RM2
+I]5c_XDJP4=DeM>WDz;nLS2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1568579302
+8Part_II.vo
+FPart_II.vo
+L0 31
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1568579303.000000
+!s107 Part_II.vo|
+!s90 -work|work|Part_II.vo|
+!i113 1
+Z3 o-work work
+Z4 tCvgOpt 0
+n@part_@i@i
+vPart_II_vlg_vec_tst
+!s110 1568579304
+!i10b 1
+!s100 >S4N[;bQ=TzC]7f4Q@N760
+InjZBLCm3[K[Ci_@2C3h=63
+R1
+R0
+w1568579299
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 29
+R2
+r1
+!s85 0
+31
+!s108 1568579304.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R3
+R4
+n@part_@i@i_vlg_vec_tst

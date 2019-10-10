@@ -1,0 +1,135 @@
+$comment
+	File created using the following command:
+		vcd file Part_II.msim.vcd -direction
+$end
+$date
+	Sun Sep 15 16:28:24 2019
+$end
+$version
+	ModelSim Version 10.5b
+$end
+$timescale
+	1ps
+$end
+
+$scope module Part_II_vlg_vec_tst $end
+$var reg 1 ! a $end
+$var reg 1 " b $end
+$var reg 1 # c $end
+$var reg 1 $ d $end
+$var wire 1 % f $end
+
+$scope module i1 $end
+$var wire 1 & gnd $end
+$var wire 1 ' vcc $end
+$var wire 1 ( unknown $end
+$var tri1 1 ) devclrn $end
+$var tri1 1 * devpor $end
+$var tri1 1 + devoe $end
+$var wire 1 , ~QUARTUS_CREATED_GND~I_combout $end
+$var wire 1 - a~input_o $end
+$var wire 1 . c~input_o $end
+$var wire 1 / d~input_o $end
+$var wire 1 0 b~input_o $end
+$var wire 1 1 inst2~combout $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+0&
+1'
+x(
+1)
+1*
+1+
+0,
+0-
+0.
+0/
+00
+01
+$end
+#1000000
+1!
+1-
+#2000000
+1"
+0!
+10
+0-
+#3000000
+1!
+1-
+11
+1%
+#4000000
+1#
+0"
+0!
+1.
+00
+0-
+01
+0%
+#5000000
+1!
+1-
+#6000000
+1"
+0!
+10
+0-
+#7000000
+1!
+1-
+11
+1%
+#8000000
+1$
+0#
+0"
+0!
+1/
+0.
+00
+0-
+01
+0%
+#9000000
+1!
+1-
+#10000000
+1"
+0!
+10
+0-
+#11000000
+1!
+1-
+11
+1%
+#12000000
+1#
+0"
+0!
+1.
+00
+0-
+#13000000
+1!
+1-
+#14000000
+1"
+0!
+10
+0-
+#15000000
+1!
+1-
+#16000000

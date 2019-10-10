@@ -1,0 +1,10 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/Urmil/OneDrive/Education/University/Work/Digital Systems/Labs/Lab 1/Project/Part I/Part_I.bdf
+source_file = 1, C:/Users/Urmil/OneDrive/Education/University/Work/Digital Systems/Labs/Lab 1/Project/Part I/db/Part_I.cbx.xml
+design_name = Part_I
+instance = comp, \f~output , f~output, Part_I, 1
+instance = comp, \x~input , x~input, Part_I, 1
+instance = comp, \z~input , z~input, Part_I, 1
+instance = comp, \y~input , y~input, Part_I, 1
+instance = comp, \inst3~0 , inst3~0, Part_I, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, Part_I, 1

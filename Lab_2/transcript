@@ -1,0 +1,9 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# vsim -gui do 
+# Start time: 23:17:22 on Sep 24,2019
+# ** Error: (vsim-3170) Could not find 'do'.
+#         Searched libraries:
+#             C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab 2/work
+# Error loading design
+# End time: 23:17:22 on Sep 24,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

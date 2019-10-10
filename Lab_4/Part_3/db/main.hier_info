@@ -1,0 +1,332 @@
+|main
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+SW[3] => SW[3].IN1
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
+SW[8] => ~NO_FANOUT~
+SW[9] => SW[9].IN1
+KEY[0] => _.IN1
+KEY[1] => _.IN1
+KEY[2] => _.IN1
+KEY[3] => _.IN1
+LEDR[0] <= circuit:z.Data_out
+LEDR[1] <= circuit:z.Data_out
+LEDR[2] <= circuit:z.Data_out
+LEDR[3] <= circuit:z.Data_out
+LEDR[4] <= circuit:z.Data_out
+LEDR[5] <= circuit:z.Data_out
+LEDR[6] <= circuit:z.Data_out
+LEDR[7] <= circuit:z.Data_out
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+
+
+|main|circuit:z
+rotateright => rotateright.IN8
+parallelloadn => parallelloadn.IN8
+asright => asright.IN1
+clk => clk.IN8
+reset => reset.IN8
+Data_in[0] => Data_in[0].IN1
+Data_in[1] => Data_in[1].IN1
+Data_in[2] => Data_in[2].IN1
+Data_in[3] => Data_in[3].IN1
+Data_in[4] => Data_in[4].IN1
+Data_in[5] => Data_in[5].IN1
+Data_in[6] => Data_in[6].IN1
+Data_in[7] => Data_in[7].IN1
+Data_out[0] <= Data_out[0].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[1] <= Data_out[1].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[2] <= Data_out[2].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[3] <= Data_out[3].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[4] <= Data_out[4].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[5] <= Data_out[5].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[6] <= Data_out[6].DB_MAX_OUTPUT_PORT_TYPE
+Data_out[7] <= Data_out[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q0
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q0|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q0|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q0|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q1
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q1|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q1|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q1|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q2
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q2|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q2|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q2|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q3
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q3|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q3|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q3|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q4
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q4|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q4|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q4|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q5
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q5|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q5|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q5|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q6
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= flipflop:u3.Q
+
+
+|main|circuit:z|subcircuit:q6|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q6|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit:q6|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit_left:q7
+right => right.IN1
+left => left.IN1
+rotateright => rotateright.IN1
+parallelloadn => parallelloadn.IN1
+asright => asright.IN1
+Data_in => Data_in.IN1
+clk => clk.IN1
+reset => reset.IN1
+Q <= Q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit_left:q7|mux2to1:u0
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit_left:q7|mux2to1:u1
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit_left:q7|mux2to1:u2
+a => f.IN0
+b => f.IN0
+s => f.IN1
+s => f.IN1
+f <= f.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|circuit:z|subcircuit_left:q7|flipflop:u3
+reset => Q.OUTPUTSELECT
+clk => Q~reg0.CLK
+D => Q.DATAA
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
