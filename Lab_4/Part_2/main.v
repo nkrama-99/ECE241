@@ -30,7 +30,7 @@ module flip_flop(reset, clk, D, Q);
 
     always@(posedge clk)//   triggered every time clock rises
         begin
-            if (reset == 1'b1)//   when Reset  b is 0 (note this is tested on every rising clock edge)
+            if (reset == 1'b1)//   when Reset  b is 1 (note this is tested on every rising clock edge)
                 Q <= 0; // q is set to 0. Note that the assignment uses <= 
             else //   when Reset  b is not 0 
                 Q <= D; //   value of d passes through to output q
@@ -58,7 +58,7 @@ module ALU(a, reset, clk, key, Rout);
         case(~key)
             3'b000: ALUout = adder_storage;
             3'b001: ALUout = a + b;
-            3'b010: ALUout = {(~(a&b)), (~(a^b))};
+            3'b010: ALUout = {(~(a&b)), (~(a^b))}; // NAND(A, B), XNOR(A, B) concatenated
             3'b011: ALUout = a || b ? 8'b0001111: 8'b00000000;
             3'b100: ALUout = ((a[0] + a[1] + a[2] + a[3] == 1'b1) && (b[0] + b[1] + b[2] + b[3] == 2'b10)) ? 8'b1110000: 8'b00000000;
             3'b101: ALUout = {a, b};

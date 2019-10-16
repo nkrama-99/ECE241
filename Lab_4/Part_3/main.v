@@ -80,9 +80,9 @@ module flipflop (reset, clk, D, Q);
 
     always@(posedge clk)//   triggered every time clock rises
         begin
-            if (reset == 1'b1)//   when Reset  b is 0 (note this is tested on every rising clock edge)
+            if (reset == 1'b1)//   when Reset  b is 1 (note this is tested on every rising clock edge)
                 Q <= 0; // q is set to 0. Note that the assignment uses <= 
-            else //   when Reset  b is not 0 
+            else //   when Reset  b is 0 
                 Q <= D; //   value of d passes through to output q
     end
 
