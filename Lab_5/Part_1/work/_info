@@ -1,0 +1,72 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1
+vmain
+Z1 !s110 1571325263
+!i10b 1
+!s100 lW^c`La]5V^4<FX9ziSe@0
+IZ`VlGl4J0d_]WJ1g^Z2j]3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1571284223
+Z4 8main.v
+Z5 Fmain.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1571325263.000000
+Z8 !s107 main.v|
+Z9 !s90 main.v|
+!i113 1
+Z10 tCvgOpt 0
+vseg7_HEX
+R1
+!i10b 1
+!s100 E[50njYOF6jfVzl]^IV@N1
+I4?5k_9fBBjUh0PczDaGH42
+R2
+R0
+R3
+R4
+R5
+L0 37
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+nseg7_@h@e@x
+vT_flip_flop
+R1
+!i10b 1
+!s100 Zjk3co4bC4FTj_h?JM9NQ2
+IGD@^a`ND^E=YP[64L@boU3
+R2
+R0
+R3
+R4
+R5
+L0 23
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+n@t_flip_flop

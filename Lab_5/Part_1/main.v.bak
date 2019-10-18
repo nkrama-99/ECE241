@@ -1,0 +1,61 @@
+module main(KEY, SW, HEX0, HEX1);
+    input [0:0]KEY;
+    input [1:0]SW;
+
+    output [6:0] HEX0;
+    output [6:0] HEX1;
+    wire q0, q1, q2, q3, q4, q5, q6, q7;
+
+    T_flip_flop u0 (.T(SW[1]), .clear(SW[0]), .clk(~KEY), .Q(q0));
+    T_flip_flop u1 (.T(SW[1] & q0), .clear(SW[0]), .clk(~KEY), .Q(q1));
+    T_flip_flop u2 (.T(SW[1] & q1), .clear(SW[0]), .clk(~KEY), .Q(q2));
+    T_flip_flop u3 (.T(SW[1] & q2), .clear(SW[0]), .clk(~KEY), .Q(q3));
+    T_flip_flop u4 (.T(SW[1] & q3), .clear(SW[0]), .clk(~KEY), .Q(q4));
+    T_flip_flop u5 (.T(SW[1] & q4), .clear(SW[0]), .clk(~KEY), .Q(q5));
+    T_flip_flop u6 (.T(SW[1] & q5), .clear(SW[0]), .clk(~KEY), .Q(q6));
+    T_flip_flop u7 (.T(SW[1] & q6), .clear(SW[0]), .clk(~KEY), .Q(q7));
+    
+    seg7_HEX hex0 (.data({q7, q6, q5, q4}), .HEX_display(HEX0));
+    seg7_HEX hex1 (.data({q3, q2, q1, q0}), .HEX_display(HEX1));
+
+endmodule
+
+module T_flip_flop(T, clk, clear, Q);
+    input T, clk, clear;
+    output reg Q;
+
+    always@(posedge clk)//   triggered every time clock rises
+        begin
+            if (clear == 1'b1)//   when Reset  b is 1 (note this is tested on every rising clock edge)
+                Q <= 0; // q is set to 0. Note that the assignment uses <= 
+
+            else if (T == 1'b1)//   when Reset  b is not 0 
+                Q <= ~Q; //   value of d passes through to output q
+        end
+endmodule
+
+module seg7_HEX (data, HEX_display);
+    input [0:3] data;
+    output [6:0] HEX_display;
+
+    assign HEX_display[0] = (~ data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (data[0] & ~ data[1] & data[2] & data[3]) | (data[0] & data[1] & ~ data[2] & data[3]);
+    assign HEX_display[1] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & data[1] & data[2] & ~ data[3]) | (data[0] & data[1] & ~ data[2] & ~ data[3]) | (data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & data[1] & data[2] & ~ data[3]) | (~ data[0] & data[1] & ~ data[2] & data[3]);
+    assign HEX_display[2] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & data[1] & data[2] & ~ data[3]) | (data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & data[2] & ~ data[3]);
+    assign HEX_display[3] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & ~ data[1] & data[2] & ~ data[3]) | (data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[4] = (data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[5] = (data[0] & data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[6] = (data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & ~ data[3]);
+endmodule
+
+/*
+Compile the circuit. To answer the following questions open the compilation report and look under
+
+ Fitterforresource utilization and TimeQuest Timing AnalyzerforFmax(open the compilation report and 
+ look underTiming Analyzer→Slow 1100 mV 85C Model→Fmax). 
+
+How  many  logic  elements  (LEs) are  used  to  implement your  circuit? 
+This  is  an  indication  of  how  manyFPGA resources are used to build your circuit.  
+How does the size of your circuit compare to the size of theFPGA you are using?
+What is the maximum frequency,Fmax, at which your circuit can be operated? 
+
+*/

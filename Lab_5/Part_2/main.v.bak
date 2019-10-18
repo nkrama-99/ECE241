@@ -1,0 +1,134 @@
+module main(SW, CLOCK_50, HEX0);
+    input [1:0] SW;
+    input CLOCK_50;
+    output [6:0] HEX0;
+
+    reg [3:0] Data_out;
+    reg [26:0] count;
+    reg [26:0] counter;
+    wire enable;
+
+    assign enable = (counter == 27'b000000000000000000000000000) ? 1 : 0;
+
+    seg7_HEX u1 (Data_out, HEX0);
+
+    always@(*)
+        begin
+            case(SW)
+                2'b00: count = 27'b000000000000000000000000001;
+                2'b01: count = 27'b001011111010111100001000000;
+                2'b10: count = 27'b010111110101111000010000000;
+                2'b11: count = 27'b101111101011110000100000000;
+                default: count = 27'b000000000000000000000000001;
+            endcase
+        end
+
+    always@(posedge CLOCK_50)
+        begin
+            if (counter >= count)
+                counter <= 27'b000000000000000000000000000;
+            else
+                counter <= counter + 1;
+
+            if (enable)
+                Data_out <= Data_out + 1;
+            
+            if (Data_out > 4'b1111)
+                Data_out <= 0; 
+        end
+
+endmodule
+/*
+
+
+
+
+
+
+module counter(Enable, ParLoad, clock, Clearb, d, q);
+    
+    input [3:0] d; //   declare d 
+    input clock, Enable, ParLoad, Clearb;
+    output reg[3:0] q; //   declare q 
+    
+    always@(posedge clock)//   triggered every time clock rises
+        begin
+            if (Clearb == 1'b0)//   when Clear  b is 0
+                q <= 0; //   q is set to 0 
+            else if (ParLoad == 1'b1)   //   Check if parallel load is 1  
+                q <= d; //   load d 
+            else if (q == 4'b1111)//   when q is the maximum value for the counter
+                q <= 0; //   q reset to 0 
+            else if (Enable == 1'b1)//   increment q only when Enable is 1
+                q <= q - 1; //   increment q
+        end
+endmodule
+
+module maain(SW, KEY, CLOCK_50, HEX0);
+    input [0:0]KEY;
+    input [1:0]SW;
+    input CLOCK_50;
+    output [6:0] HEX0;
+
+    reg [25:0] counter = 29'd0;
+    reg [25:0] count = 29'd1;
+    wire [3:0] Q;
+    wire new_clock;
+
+    counter u2 (.Enable(1'b1), .ParLoad(1'b0), .clock(new_clock), .Clearb(1'b1), .d(1'b0), .q(Q));
+
+    seg7_HEX u3 (Q, HEX0);
+
+    always@(posedge CLOCK_50)
+        begin
+            counter <= counter + 29'd1;
+            if (counter>=(count - 1))
+                counter <= 29'd0;
+        end
+
+    assign new_clock = (counter<count/2) ? 1'b0 : 1'b1;
+    
+    always@(*)
+        begin
+            case(SW)
+                2'b00: count = 29'd1;
+                2'b01: count = 29'd25000000;
+                2'b10: count = 29'd50000000;
+                2'b11: count = 29'd100000000;
+                default: count = 29'd1;
+            endcase
+        end
+endmodule
+*/
+module seg7_HEX (data, HEX_display);
+    input [0:3] data;
+    output [6:0] HEX_display;
+
+    assign HEX_display[0] = (~ data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (data[0] & ~ data[1] & data[2] & data[3]) | (data[0] & data[1] & ~ data[2] & data[3]);
+    assign HEX_display[1] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & data[1] & data[2] & ~ data[3]) | (data[0] & data[1] & ~ data[2] & ~ data[3]) | (data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & data[1] & data[2] & ~ data[3]) | (~ data[0] & data[1] & ~ data[2] & data[3]);
+    assign HEX_display[2] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & data[1] & data[2] & ~ data[3]) | (data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & data[2] & ~ data[3]);
+    assign HEX_display[3] = (data[0] & data[1] & data[2] & data[3]) | (data[0] & ~ data[1] & data[2] & ~ data[3]) | (data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[4] = (data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[5] = (data[0] & data[1] & ~ data[2] & data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & data[2] & ~ data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]);
+    assign HEX_display[6] = (data[0] & data[1] & ~ data[2] & ~ data[3]) | (~ data[0] & data[1] & data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & data[3]) | (~ data[0] & ~ data[1] & ~ data[2] & ~ data[3]);
+endmodule
+
+/*
+module clockgen(clock_in, clock_out);
+    input clock_in;
+    output clock_out;
+    parameter desired_freq = 1;
+    parameter count = 50000000/desired_freq;
+    reg [25:0] counter = 28'd0;
+
+    always@(posedge clock_in)
+        begin
+            counter <= counter + 28'd1;
+            if (counter>=(count - 1))
+                counter <= 28'd0;
+        end
+    
+    assign clock_out = (counter<count/2) ? 1'b0 :1'b1;
+endmodule
+
+*/

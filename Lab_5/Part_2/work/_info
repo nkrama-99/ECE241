@@ -1,0 +1,131 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2
+vclockgen
+!s110 1571283024
+!i10b 1
+!s100 gXT<XIIa6jB=;aff:jL262
+I`cGh`<Ch5`HB=kb[]X``J0
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1571283022
+Z2 8main.v
+Z3 Fmain.v
+L0 71
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1571283024.000000
+Z5 !s107 main.v|
+Z6 !s90 main.v|
+!i113 1
+Z7 tCvgOpt 0
+vclockpulsegenerator
+!s110 1571259084
+!i10b 1
+!s100 UL998g?9IHdE@286fXR<Q3
+ICclhF7C1hGbm]AY6QMGlm1
+R1
+R0
+w1571259082
+R2
+R3
+L0 33
+R4
+r1
+!s85 0
+31
+!s108 1571259084.000000
+R5
+R6
+!i113 1
+R7
+vcounter
+Z8 !s110 1571288513
+!i10b 1
+!s100 hO=[iEo`51:D1QAn8A2g22
+IN;e:`I`74GoANhdLC0LWo3
+R1
+R0
+Z9 w1571288500
+R2
+R3
+L0 49
+R4
+r1
+!s85 0
+31
+Z10 !s108 1571288513.000000
+R5
+R6
+!i113 1
+R7
+vmaain
+R8
+!i10b 1
+!s100 eI6hH0VcI2^OG[dhKCe=73
+Ig6QEfD7Z>^?1FchnWfeMd3
+R1
+R0
+R9
+R2
+R3
+L0 68
+R4
+r1
+!s85 0
+31
+R10
+R5
+R6
+!i113 1
+R7
+vmain
+Z11 !s110 1571289459
+!i10b 1
+!s100 aIUnN1zLSLF8e?5Z0P]P80
+ITd=TOgdT1Cc]@O@zAeT7i2
+R1
+R0
+Z12 w1571288772
+R2
+R3
+L0 1
+R4
+r1
+!s85 0
+31
+Z13 !s108 1571289459.000000
+R5
+R6
+!i113 1
+R7
+vseg7_HEX
+R11
+!i10b 1
+!s100 ;CZJacmJhA4PzF_GLJM=S0
+IH>:bK7:IZUk`jbJkod_Me2
+R1
+R0
+R12
+R2
+R3
+L0 103
+R4
+r1
+!s85 0
+31
+R13
+R5
+R6
+!i113 1
+R7
+nseg7_@h@e@x
