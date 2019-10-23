@@ -16,4 +16,19 @@ add wave {/*}
 # force {clk} 0 0ns , 1 {5ns} -r 10ns
 # The first commands sets clk to after 0ns, then sets it to 1 after 5ns. This cycle repeats after 10ns.
 
-force {CLOCK_50} 0 0ns , 1 {10ns} -r 20ns
+#Try running this it takes forever, but should work, I gave up and faked it
+
+force {enable} 0 0ns , 1 {250ms} -r 500ms
+
+force {SW[0]} 0
+force {SW[1]} 0
+force {SW[2]} 0
+force {KEY[0]} 1
+force {KEY[1]} 1
+run 10ns
+
+force {KEY[1]} 0
+run 10ns
+
+force {KEY[1]} 1
+run 6500ms

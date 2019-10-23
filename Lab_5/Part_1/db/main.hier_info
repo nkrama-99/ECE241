@@ -23,16 +23,6 @@ HEX1[3] <= seg7_HEX:hex1.HEX_display
 HEX1[4] <= seg7_HEX:hex1.HEX_display
 HEX1[5] <= seg7_HEX:hex1.HEX_display
 HEX1[6] <= seg7_HEX:hex1.HEX_display
-LEDR[0] <= <GND>
-LEDR[1] <= <GND>
-LEDR[2] <= <GND>
-LEDR[3] <= <GND>
-LEDR[4] <= <GND>
-LEDR[5] <= <GND>
-LEDR[6] <= <GND>
-LEDR[7] <= <GND>
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
 
 
 |main|T_flip_flop:u0

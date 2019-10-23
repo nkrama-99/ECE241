@@ -1,6 +1,6 @@
 Analysis & Synthesis report for main
-Thu Oct 17 13:32:43 2019
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Mon Oct 21 09:28:17 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -40,27 +40,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 17 13:32:43 2019           ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
-; Revision Name                   ; main                                            ;
-; Top-level Entity Name           ; main                                            ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 8                                               ;
-; Total pins                      ; 27                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Oct 21 09:28:17 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; main                                        ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 8                                           ;
+; Total pins                      ; 17                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -167,13 +167,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                               ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File  ; D:/Lab_5/Part_1/main.v       ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +----------------------------------------------------------------+
@@ -192,14 +192,14 @@ refer to the applicable agreement for further details.
 ;                                             ;                  ;
 ; Dedicated logic registers                   ; 8                ;
 ;                                             ;                  ;
-; I/O pins                                    ; 27               ;
+; I/O pins                                    ; 17               ;
 ;                                             ;                  ;
 ; Total DSP Blocks                            ; 0                ;
 ;                                             ;                  ;
 ; Maximum fan-out node                        ; T_flip_flop:u0|Q ;
 ; Maximum fan-out                             ; 14               ;
-; Total fan-out                               ; 167              ;
-; Average fan-out                             ; 1.90             ;
+; Total fan-out                               ; 157              ;
+; Average fan-out                             ; 2.31             ;
 +---------------------------------------------+------------------+
 
 
@@ -208,7 +208,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; |main                      ; 26 (0)              ; 8 (0)                     ; 0                 ; 0          ; 27   ; 0            ; |main                ; main        ; work         ;
+; |main                      ; 26 (0)              ; 8 (0)                     ; 0                 ; 0          ; 17   ; 0            ; |main                ; main        ; work         ;
 ;    |T_flip_flop:u0|        ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|T_flip_flop:u0 ; T_flip_flop ; work         ;
 ;    |T_flip_flop:u1|        ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|T_flip_flop:u1 ; T_flip_flop ; work         ;
 ;    |T_flip_flop:u2|        ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |main|T_flip_flop:u2 ; T_flip_flop ; work         ;
@@ -245,18 +245,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; arriav_ff             ; 8                           ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 27                          ;
-;     normal            ; 27                          ;
-;         0 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 26                          ;
+;     normal            ; 26                          ;
 ;         2 data inputs ; 2                           ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 15                          ;
 ;         5 data inputs ; 5                           ;
 ;         6 data inputs ; 3                           ;
-; boundary_port         ; 27                          ;
+; boundary_port         ; 17                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.37                        ;
+; Average LUT depth     ; 1.41                        ;
 +-----------------------+-----------------------------+
 
 
@@ -274,30 +273,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu Oct 17 13:32:32 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Mon Oct 21 09:27:57 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 3 design units, including 3 entities, in source file main.v
-    Info (12023): Found entity 1: main File: D:/Lab_5/Part_1/main.v Line: 1
-    Info (12023): Found entity 2: T_flip_flop File: D:/Lab_5/Part_1/main.v Line: 24
-    Info (12023): Found entity 3: seg7_HEX File: D:/Lab_5/Part_1/main.v Line: 38
+    Info (12023): Found entity 1: main File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v Line: 1
+    Info (12023): Found entity 2: T_flip_flop File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v Line: 23
+    Info (12023): Found entity 3: seg7_HEX File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v Line: 37
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10034): Output port "LEDR" at main.v(7) has no driver File: D:/Lab_5/Part_1/main.v Line: 7
-Info (12128): Elaborating entity "T_flip_flop" for hierarchy "T_flip_flop:u0" File: D:/Lab_5/Part_1/main.v Line: 10
-Info (12128): Elaborating entity "seg7_HEX" for hierarchy "seg7_HEX:hex0" File: D:/Lab_5/Part_1/main.v Line: 19
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: D:/Lab_5/Part_1/main.v Line: 7
+Info (12128): Elaborating entity "T_flip_flop" for hierarchy "T_flip_flop:u0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v Line: 9
+Info (12128): Elaborating entity "seg7_HEX" for hierarchy "seg7_HEX:hex0" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/main.v Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
@@ -685,23 +672,23 @@ Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SoC was ignored
-Info (144001): Generated suppressed messages file D:/Lab_5/Part_1/output_files/main.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/output_files/main.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 43 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 24 output pins
+    Info (21059): Implemented 14 output pins
     Info (21061): Implemented 26 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 399 warnings
-    Info: Peak virtual memory: 722 megabytes
-    Info: Processing ended: Thu Oct 17 13:32:43 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 387 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Mon Oct 21 09:28:17 2019
+    Info: Elapsed time: 00:00:20
+    Info: Total CPU time (on all processors): 00:00:41
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/Lab_5/Part_1/output_files/main.map.smsg.
+The suppressed messages can be found in C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1/output_files/main.map.smsg.
 
 

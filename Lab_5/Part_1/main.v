@@ -1,10 +1,9 @@
-module main(KEY, SW, HEX0, HEX1, LEDR);
+module main(KEY, SW, HEX0, HEX1);
     input [0:0]KEY;
     input [1:0]SW;
 
     output [6:0] HEX0;
     output [6:0] HEX1;
-	 output [9:0] LEDR;
     wire q0, q1, q2, q3, q4, q5, q6, q7;
 
     T_flip_flop u0 (.T(SW[1]), .clear(SW[0]), .clk(~KEY), .Q(q0));
@@ -25,7 +24,7 @@ module T_flip_flop(T, clk, clear, Q);
     input T, clk, clear;
     output reg Q;
 
-    always@(posedge clk)//   triggered every time clock rises
+    always@(posedge clk, posedge clear)//   triggered every time clock rises
         begin
             if (clear == 1'b1)//   when Reset  b is 1 (note this is tested on every rising clock edge)
                 Q <= 0; // q is set to 0. Note that the assignment uses <= 
@@ -58,5 +57,8 @@ How  many  logic  elements  (LEs) are  used  to  implement your  circuit?
 This  is  an  indication  of  how  manyFPGA resources are used to build your circuit.  
 How does the size of your circuit compare to the size of theFPGA you are using?
 What is the maximum frequency,Fmax, at which your circuit can be operated? 
+
+Max Freq. 539.96 MHz
+Logic utilization (in ALMs) 15 / 37070 <!%
 
 */

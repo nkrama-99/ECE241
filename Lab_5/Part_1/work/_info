@@ -9,13 +9,13 @@ z2
 cModel Technology
 Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_1
 vmain
-Z1 !s110 1571325263
+Z1 !s110 1571675641
 !i10b 1
-!s100 lW^c`La]5V^4<FX9ziSe@0
-IZ`VlGl4J0d_]WJ1g^Z2j]3
+!s100 hLhS=Pl6c[fH2K;iJORPA1
+Ig4zO<g0=kSkT]VIkP9Tnc3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-Z3 w1571284223
+Z3 w1571665304
 Z4 8main.v
 Z5 Fmain.v
 L0 1
@@ -23,9 +23,9 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1571325263.000000
+Z7 !s108 1571675641.000000
 Z8 !s107 main.v|
-Z9 !s90 main.v|
+Z9 !s90 -reportprogress|300|main.v|
 !i113 1
 Z10 tCvgOpt 0
 vseg7_HEX

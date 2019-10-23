@@ -9,9 +9,13 @@ module main(SW, KEY, CLOCK_50, LEDR);
     reg [26:0] counter;
 	 
     reg [12:0] seq; // Morse Code Data
-	 reg [12:0] shifted_seq;
-	 
-	 
+	reg [12:0] shifted_seq;
+    
+    initial LEDR[0] <= 0;
+    initial counter <= 0;
+    initial seq <= 0;
+    initial shifted_seq <= 0; 
+    
     always@(SW)
         begin
             case(SW)

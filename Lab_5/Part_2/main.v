@@ -8,6 +8,9 @@ module main(SW, CLOCK_50, HEX0);
     reg [26:0] counter;
     wire enable;
 
+    initial Data_out <= 4'b0;
+    initial count <= 27'b000000000000000000000000001;
+    initial counter <= 27'b000000000000000000000000000;
     assign enable = (counter == 27'b000000000000000000000000000) ? 1 : 0;
 
     seg7_HEX u1 (Data_out, HEX0);
