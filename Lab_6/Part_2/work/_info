@@ -1,0 +1,110 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_6/Part_2
+vcontrol
+Z1 !s110 1572161021
+!i10b 1
+!s100 T^HY4XSPK0e^iPD?_PRCS1
+I4YDo_>@[ToiZL<2kfJkJ52
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1572160897
+Z4 8poly_function.v
+Z5 Fpoly_function.v
+L0 101
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1572161020.000000
+Z8 !s107 poly_function.v|
+Z9 !s90 -reportprogress|300|poly_function.v|
+!i113 1
+Z10 tCvgOpt 0
+vdatapath
+R1
+!i10b 1
+!s100 QPfO5:2`j9oim;`>23lkk3
+I^OXnccKhKY[KA6eFh0<NQ2
+R2
+R0
+R3
+R4
+R5
+L0 224
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vfpga_top
+R1
+!i10b 1
+!s100 hj5L29`GPaUE<4;a[1A>j1
+IzF9U]gEc:Kf9X>RNGTdi^1
+R2
+R0
+R3
+R4
+R5
+L0 11
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vhex_decoder
+R1
+!i10b 1
+!s100 ;H1_91nC8PX<T:U>4;:1c0
+I;UfZJH;TKE]`jIH^klGZ_3
+R2
+R0
+R3
+R4
+R5
+L0 321
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vpart2
+R1
+!i10b 1
+!s100 LQ<:bEBIWm9S6<>ClR>hQ3
+I5;eZ9>5M4]B[VLSJjc[033
+R2
+R0
+R3
+R4
+R5
+L0 47
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

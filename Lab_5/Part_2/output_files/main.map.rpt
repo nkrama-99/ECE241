@@ -1,6 +1,6 @@
 Analysis & Synthesis report for main
-Thu Oct 17 13:37:51 2019
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Wed Oct 23 12:25:25 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -39,27 +39,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 17 13:37:51 2019           ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
-; Revision Name                   ; main                                            ;
-; Top-level Entity Name           ; main                                            ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 31                                              ;
-; Total pins                      ; 10                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Oct 23 12:25:25 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; main                                        ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 31                                          ;
+; Total pins                      ; 10                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -166,13 +166,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                               ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File  ; D:/Lab_5/Part_2/main.v       ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -257,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -266,19 +266,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu Oct 17 13:37:40 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Oct 23 12:25:06 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file main.v
-    Info (12023): Found entity 1: main File: D:/Lab_5/Part_2/main.v Line: 1
-    Info (12023): Found entity 2: seg7_HEX File: D:/Lab_5/Part_2/main.v Line: 42
+    Info (12023): Found entity 1: main File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 1
+    Info (12023): Found entity 2: seg7_HEX File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 45
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(11): truncated value with size 32 to match size of target (1) File: D:/Lab_5/Part_2/main.v Line: 11
-Warning (10230): Verilog HDL assignment warning at main.v(31): truncated value with size 32 to match size of target (27) File: D:/Lab_5/Part_2/main.v Line: 31
-Warning (10230): Verilog HDL assignment warning at main.v(34): truncated value with size 32 to match size of target (4) File: D:/Lab_5/Part_2/main.v Line: 34
-Info (12128): Elaborating entity "seg7_HEX" for hierarchy "seg7_HEX:u1" File: D:/Lab_5/Part_2/main.v Line: 13
+Warning (10230): Verilog HDL assignment warning at main.v(14): truncated value with size 32 to match size of target (1) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 14
+Warning (10230): Verilog HDL assignment warning at main.v(34): truncated value with size 32 to match size of target (27) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 34
+Warning (10230): Verilog HDL assignment warning at main.v(37): truncated value with size 32 to match size of target (4) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 37
+Info (12128): Elaborating entity "seg7_HEX" for hierarchy "seg7_HEX:u1" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_2/main.v Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
@@ -673,9 +673,9 @@ Info (21057): Implemented 76 device resources after synthesis - the final resour
     Info (21059): Implemented 7 output pins
     Info (21061): Implemented 66 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 390 warnings
-    Info: Peak virtual memory: 723 megabytes
-    Info: Processing ended: Thu Oct 17 13:37:51 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Wed Oct 23 12:25:25 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:38
 
 

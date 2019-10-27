@@ -26,58 +26,58 @@ HEX1[6] <= seg7_HEX:hex1.HEX_display
 
 
 |main|T_flip_flop:u0
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u1
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u2
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u3
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u4
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u5
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u6
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |main|T_flip_flop:u7
-T => Q.OUTPUTSELECT
+T => Q~reg0.ENA
 clk => Q~reg0.CLK
-clear => Q.OUTPUTSELECT
+clear => Q~reg0.ACLR
 Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

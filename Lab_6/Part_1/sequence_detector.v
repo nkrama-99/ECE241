@@ -7,8 +7,8 @@
 //LEDR[9] displays output
 
 module sequence_detector(SW, KEY, LEDR);
-    input [9:0] SW;
-    input [3:0] KEY;
+    input [1:0] SW;
+    input [0:0] KEY;
     output [9:0] LEDR;
 
     wire w, clock, resetn, out_light;
@@ -36,11 +36,26 @@ module sequence_detector(SW, KEY, LEDR);
                    if(!w) Y_D = A;
                    else Y_D = C;
                end
-            C: 
-            D:
-            E:
-            F:
-            G:
+            C: begin
+                   if(!w) Y_D = E;
+                   else Y_D = D;
+               end
+            D: begin
+                   if(!w) Y_D = E;
+                   else Y_D = F;
+               end
+            E: begin
+                   if(!w) Y_D = A;
+                   else Y_D = G;
+               end
+            F: begin
+                   if(!w) Y_D = E;
+                   else Y_D = F;
+               end
+            G: begin
+                   if(!w) Y_D = A;
+                   else Y_D = C;
+               end
             default: Y_D = A;
         endcase
     end // state_table
@@ -49,14 +64,14 @@ module sequence_detector(SW, KEY, LEDR);
     always @(posedge clock)
     begin: state_FFs
         if(resetn == 1'b0)
-            y_Q <=  A; // Should set reset state to state A
+            y_Q <= A; // Should set reset state to state A
         else
             y_Q <= Y_D;
     end // state_FFS
 
     // Output logic
     // Set out_light to 1 to turn on LED when in relevant states
-    assign out_light = // ((y_Q == ) | (y_Q == ) | (y_Q == ));
+    assign out_light = ((y_Q == F) | (y_Q == G));
 
     assign LEDR[9] = out_light;
     assign LEDR[3:0] = y_Q;

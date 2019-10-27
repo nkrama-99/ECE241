@@ -1,6 +1,6 @@
 Analysis & Synthesis report for main
-Thu Oct 17 16:37:42 2019
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Wed Oct 23 12:29:51 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
 ---------------------
@@ -40,27 +40,27 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Oct 17 16:37:42 2019           ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
-; Revision Name                   ; main                                            ;
-; Top-level Entity Name           ; main                                            ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 41                                              ;
-; Total pins                      ; 7                                               ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 0                                               ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Oct 23 12:29:51 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; main                                        ;
+; Top-level Entity Name           ; main                                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 41                                          ;
+; Total pins                      ; 7                                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -167,13 +167,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                               ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File  ; D:/Lab_5/Part_3/main.v       ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v ;         ;
++----------------------------------+-----------------+------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -257,7 +257,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -266,29 +266,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Thu Oct 17 16:37:31 2019
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Wed Oct 23 12:29:32 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
-    Info (12023): Found entity 1: main File: D:/Lab_5/Part_3/main.v Line: 1
+    Info (12023): Found entity 1: main File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(55): truncated value with size 32 to match size of target (27) File: D:/Lab_5/Part_3/main.v Line: 55
+Warning (10230): Verilog HDL assignment warning at main.v(59): truncated value with size 32 to match size of target (27) File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 59
 Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
-    Warning (13310): Register "shifted_seq[12]" is converted into an equivalent circuit using register "shifted_seq[12]~_emulated" and latch "shifted_seq[12]~1" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[11]" is converted into an equivalent circuit using register "shifted_seq[11]~_emulated" and latch "shifted_seq[11]~5" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[10]" is converted into an equivalent circuit using register "shifted_seq[10]~_emulated" and latch "shifted_seq[12]~1" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[9]" is converted into an equivalent circuit using register "shifted_seq[9]~_emulated" and latch "shifted_seq[9]~11" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[8]" is converted into an equivalent circuit using register "shifted_seq[8]~_emulated" and latch "shifted_seq[8]~15" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[7]" is converted into an equivalent circuit using register "shifted_seq[7]~_emulated" and latch "shifted_seq[7]~19" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[6]" is converted into an equivalent circuit using register "shifted_seq[6]~_emulated" and latch "shifted_seq[6]~23" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[5]" is converted into an equivalent circuit using register "shifted_seq[5]~_emulated" and latch "shifted_seq[5]~27" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[4]" is converted into an equivalent circuit using register "shifted_seq[4]~_emulated" and latch "shifted_seq[4]~31" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[3]" is converted into an equivalent circuit using register "shifted_seq[3]~_emulated" and latch "shifted_seq[3]~35" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[2]" is converted into an equivalent circuit using register "shifted_seq[2]~_emulated" and latch "shifted_seq[2]~39" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[1]" is converted into an equivalent circuit using register "shifted_seq[1]~_emulated" and latch "shifted_seq[1]~43" File: D:/Lab_5/Part_3/main.v Line: 41
-    Warning (13310): Register "shifted_seq[0]" is converted into an equivalent circuit using register "shifted_seq[0]~_emulated" and latch "shifted_seq[1]~43" File: D:/Lab_5/Part_3/main.v Line: 41
+    Warning (13310): Register "shifted_seq[12]" is converted into an equivalent circuit using register "shifted_seq[12]~_emulated" and latch "shifted_seq[12]~1" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[11]" is converted into an equivalent circuit using register "shifted_seq[11]~_emulated" and latch "shifted_seq[11]~5" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[10]" is converted into an equivalent circuit using register "shifted_seq[10]~_emulated" and latch "shifted_seq[12]~1" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[9]" is converted into an equivalent circuit using register "shifted_seq[9]~_emulated" and latch "shifted_seq[9]~11" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[8]" is converted into an equivalent circuit using register "shifted_seq[8]~_emulated" and latch "shifted_seq[8]~15" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[7]" is converted into an equivalent circuit using register "shifted_seq[7]~_emulated" and latch "shifted_seq[7]~19" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[6]" is converted into an equivalent circuit using register "shifted_seq[6]~_emulated" and latch "shifted_seq[6]~23" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[5]" is converted into an equivalent circuit using register "shifted_seq[5]~_emulated" and latch "shifted_seq[5]~27" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[4]" is converted into an equivalent circuit using register "shifted_seq[4]~_emulated" and latch "shifted_seq[4]~31" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[3]" is converted into an equivalent circuit using register "shifted_seq[3]~_emulated" and latch "shifted_seq[3]~35" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[2]" is converted into an equivalent circuit using register "shifted_seq[2]~_emulated" and latch "shifted_seq[2]~39" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[1]" is converted into an equivalent circuit using register "shifted_seq[1]~_emulated" and latch "shifted_seq[1]~43" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
+    Warning (13310): Register "shifted_seq[0]" is converted into an equivalent circuit using register "shifted_seq[0]~_emulated" and latch "shifted_seq[1]~43" File: C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/main.v Line: 45
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CS_N -entity DE1_SoC was ignored
@@ -676,7 +676,7 @@ Warning (20013): Ignored 385 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_R[7] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_SYNC_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VGA_VS -entity DE1_SoC was ignored
-Info (144001): Generated suppressed messages file D:/Lab_5/Part_3/output_files/main.map.smsg
+Info (144001): Generated suppressed messages file C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/output_files/main.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 94 device resources after synthesis - the final resource count might be different
@@ -684,15 +684,15 @@ Info (21057): Implemented 94 device resources after synthesis - the final resour
     Info (21059): Implemented 1 output pins
     Info (21061): Implemented 87 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 402 warnings
-    Info: Peak virtual memory: 724 megabytes
-    Info: Processing ended: Thu Oct 17 16:37:42 2019
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Peak virtual memory: 4853 megabytes
+    Info: Processing ended: Wed Oct 23 12:29:51 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:40
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in D:/Lab_5/Part_3/output_files/main.map.smsg.
+The suppressed messages can be found in C:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_5/Part_3/output_files/main.map.smsg.
 
 

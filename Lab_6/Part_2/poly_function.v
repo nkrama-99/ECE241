@@ -5,12 +5,14 @@
 
 //LEDR displays result
 //HEX0 & HEX1 also displays result
+//x, A, B, C
+//Ax^2+Bx+Cx
 
 module fpga_top(SW, KEY, CLOCK_50, LEDR, HEX0, HEX1);
-    input [9:0] SW;
-    input [3:0] KEY;
+    input [7:0] SW;
+    input [1:0] KEY;
     input CLOCK_50;
-    output [9:0] LEDR;
+    output [7:0] LEDR;
     output [6:0] HEX0, HEX1;
 
     wire resetn;
@@ -119,7 +121,9 @@ module control(
                 S_LOAD_X_WAIT   = 5'd7,
                 S_CYCLE_0       = 5'd8,
                 S_CYCLE_1       = 5'd9,
-                S_CYCLE_2       = 5'd10;
+                S_CYCLE_2       = 5'd10,
+                S_CYCLE_3       = 5'd11,
+                S_CYCLE_4       = 5'd12;
     
     // Next state logic aka our state table
     always@(*)
@@ -134,8 +138,11 @@ module control(
                 S_LOAD_X: next_state = go ? S_LOAD_X_WAIT : S_LOAD_X; // Loop in current state until value is input
                 S_LOAD_X_WAIT: next_state = go ? S_LOAD_X_WAIT : S_CYCLE_0; // Loop in current state until go signal goes low
                 S_CYCLE_0: next_state = S_CYCLE_1;
-                S_CYCLE_1: next_state = S_LOAD_A; // we will be done our two operations, start over after
-            default:     next_state = S_LOAD_A;
+                S_CYCLE_1: next_state = S_CYCLE_2;
+                S_CYCLE_2: next_state = S_CYCLE_3;
+                S_CYCLE_3: next_state = S_CYCLE_4;
+                S_CYCLE_4: next_state = S_LOAD_A; // we will be done our four operations, start over after
+            default:       next_state = S_LOAD_A;
         endcase
     end // state_table
    
@@ -170,17 +177,35 @@ module control(
             S_LOAD_X: begin
                 ld_x = 1'b1;
                 end
-            S_CYCLE_0: begin // Do A <- A * A 
+            S_CYCLE_0: begin // Do A <- A * x
                 ld_alu_out = 1'b1; ld_a = 1'b1; // store result back into A
                 alu_select_a = 2'b00; // Select register A
-                alu_select_b = 2'b00; // Also select register A
+                alu_select_b = 2'b11; // Select register X
                 alu_op = 1'b1; // Do multiply operation
             end
-            S_CYCLE_1: begin
-                ld_r = 1'b1; // store result in result register
-                alu_select_a = 2'b00; // Select register A
-                alu_select_b = 2'b10; // Select register C
-                alu_op = 1'b0; // Do Add operation
+            S_CYCLE_1: begin // (A*x*x)
+                ld_alu_out = 1'b1; ld_a = 1'b1;  
+                alu_select_a = 2'b00;
+                alu_select_b = 2'b11;
+                alu_op = 1'b1;
+            end
+            S_CYCLE_2: begin // A*x*x + C
+                ld_alu_out = 1'b1; ld_a = 1'b1;  
+                alu_select_a = 2'b00;
+                alu_select_b = 2'b10;
+                alu_op = 1'b0;
+            end
+            S_CYCLE_3: begin // (B*x)
+                ld_alu_out = 1'b1; ld_b = 1'b1; 
+                alu_select_a = 2'b01; 
+                alu_select_b = 2'b11; 
+                alu_op = 1'b1;
+            end
+            S_CYCLE_4: begin //(A*x + C) + (B*x)
+                ld_r = 1'b1; 
+                alu_select_a = 2'b00; // A
+                alu_select_b = 2'b01; // B
+                alu_op = 1'b0; 
             end
         // default:    // don't need default since we already made sure all of our outputs were assigned a value at the start of the always block
         endcase

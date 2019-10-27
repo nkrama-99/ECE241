@@ -59,6 +59,6 @@ How does the size of your circuit compare to the size of theFPGA you are using?
 What is the maximum frequency,Fmax, at which your circuit can be operated? 
 
 Max Freq. 539.96 MHz
-Logic utilization (in ALMs) 15 / 37070 <!%
+Logic utilization (in ALMs) 15 / 37070 < 1%
 
 */
