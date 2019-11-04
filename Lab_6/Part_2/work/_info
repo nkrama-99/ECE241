@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Users/Urmil/OneDrive/Education/University/Work/Digital_Systems/Labs/Lab_6/Part_2
 vcontrol
-Z1 !s110 1572161021
+Z1 !s110 1572658401
 !i10b 1
 !s100 T^HY4XSPK0e^iPD?_PRCS1
 I4YDo_>@[ToiZL<2kfJkJ52
@@ -23,9 +23,9 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1572161020.000000
+Z7 !s108 1572658401.000000
 Z8 !s107 poly_function.v|
-Z9 !s90 -reportprogress|300|poly_function.v|
+Z9 !s90 poly_function.v|
 !i113 1
 Z10 tCvgOpt 0
 vdatapath
